@@ -26,6 +26,8 @@ See [List of resource record types](https://nodejs.org/dist/latest-v16.x/docs/ap
 ```json
 {
     "result": "OK" | "NG",
+    "hostname": Same as parameter,
+    "rrtype": Same as parameter,
     "records": null | <string[]> | <Object[]> | <Object>,
     "error": null | <Error>
 }
