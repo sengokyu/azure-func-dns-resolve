@@ -12,12 +12,12 @@ const httpTrigger: AzureFunction = async function (
     const resolver = new Resolver();
 
     try {
-      resolver.resolve(hostname, rrtype, (err, addresses) => {
-        const result = err ? "NG" : "OK";
+      resolver.resolve(hostname, rrtype, (error, records) => {
+        const result = error ? "NG" : "OK";
 
         context.res = {
           headers: { "Content-Type": "application/json" },
-          body: { result, addresses },
+          body: { result, records, error },
         };
 
         resolv();
