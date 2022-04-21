@@ -25,7 +25,8 @@ jobs:
           cache: "npm"
 
       - run: npm install
-      - run: npm run build:production
+      - run: npm run build
+      - run: npm prune --production
 
       - name: Deploy to Azure Functions
         uses: Azure/functions-action@v1
